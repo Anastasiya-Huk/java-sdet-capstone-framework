@@ -3,7 +3,7 @@ package org.example;
 import java.util.Scanner;
 
 /*
-
+Вывести положительное, отрицательное или ноль
  */
 
 public class Exercise4 {
