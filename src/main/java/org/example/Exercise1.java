@@ -2,6 +2,9 @@ package org.example;
 
 import java.util.Scanner;
 
+/**
+ * Четное или нечетное число
+ */
 public class Exercise1 {
     static void main() {
         System.out.print("Enter: ");
