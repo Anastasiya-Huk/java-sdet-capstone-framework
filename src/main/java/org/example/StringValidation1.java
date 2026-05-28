@@ -2,6 +2,10 @@ package org.example;
 
 import java.util.Scanner;
 
+/*
+Password Length Validation
+ */
+
 public class StringValidation1 {
     static void main() {
         Scanner console = new Scanner(System.in);
