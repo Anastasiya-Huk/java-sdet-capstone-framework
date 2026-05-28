@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Четное или нечетное число
  */
-public class Exercise1 {
+public class ConditionalLogic1 {
     static void main() {
         System.out.print("Enter: ");
         Scanner console = new Scanner(System.in);

@@ -5,7 +5,7 @@ import java.util.Scanner;
  /*
  Максимум из двух
   */
-public class Exercise3 {
+public class ConditionalLogic3 {
     static void main() {
         Scanner console = new Scanner(System.in);
         System.out.print("Enter number 1: ");

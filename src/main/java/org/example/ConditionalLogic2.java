@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*
  Проверка возраста
  */
-public class Exercise2 {
+public class ConditionalLogic2 {
     static void main() {
         System.out.print("Enter age: ");
         Scanner console = new Scanner(System.in);
