@@ -16,6 +16,6 @@ public class SimpleCalculations1 {
         System.out.print("Enter number 2: ");
         int number2 = console.nextInt();
 
-        System.out.print("Sum: " + (number1 + number2));
+        System.out.println("Sum: " + (number1 + number2));
     }
 }
