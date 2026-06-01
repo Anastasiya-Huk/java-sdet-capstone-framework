@@ -1,4 +1,4 @@
-package org.example;
+package org.example.task_1139737;
 
 /*
 Compare Two Strings
