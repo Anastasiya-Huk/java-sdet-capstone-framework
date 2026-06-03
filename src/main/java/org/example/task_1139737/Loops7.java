@@ -7,16 +7,17 @@ Entering a PIN code
 import java.util.Scanner;
 
 public class Loops7 {
-    public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
-        int pin;
 
-        do {
-            System.out.println("Enter PIN: ");
-            pin = console.nextInt();
+  public static void main(String[] args) {
+    Scanner console = new Scanner(System.in);
+    int pin;
 
-        } while (pin < 1000 || pin > 9999);
+    do {
+      System.out.println("Enter PIN: ");
+      pin = console.nextInt();
 
-        System.out.println("PIN accepted");
-    }
+    } while (pin < 1000 || pin > 9999);
+
+    System.out.println("PIN accepted");
+  }
 }

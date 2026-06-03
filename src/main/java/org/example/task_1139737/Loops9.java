@@ -7,16 +7,17 @@ Checking the password length
 import java.util.Scanner;
 
 public class Loops9 {
-    public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
-        String password;
 
-        do {
-            System.out.println("Enter your password (at least 6 characters): ");
-            password = console.nextLine();
+  public static void main(String[] args) {
+    Scanner console = new Scanner(System.in);
+    String password;
 
-        } while (password.length() < 6);
+    do {
+      System.out.println("Enter your password (at least 6 characters): ");
+      password = console.nextLine();
 
-        System.out.println("The password is secure.");
-    }
+    } while (password.length() < 6);
+
+    System.out.println("The password is secure.");
+  }
 }

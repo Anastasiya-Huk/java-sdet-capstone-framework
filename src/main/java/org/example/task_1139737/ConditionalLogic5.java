@@ -3,24 +3,25 @@ package org.example.task_1139737;
 import java.util.Scanner;
 
 public class ConditionalLogic5 {
-    public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
 
-        System.out.println("Введите ваш возраст:");
-        int age = console.nextInt();
-        console.nextLine();
+  public static void main(String[] args) {
+    Scanner console = new Scanner(System.in);
 
-        System.out.println("У вас есть клубная карта? (да/нет):");
-        String hasClubCard = console.nextLine().trim().toLowerCase();
+    System.out.println("Введите ваш возраст:");
+    int age = console.nextInt();
+    console.nextLine();
 
-        if (age >= 65) {
-            System.out.println("Ваша скидка: 20%.");
-        } else {
-            if (hasClubCard.equals("да")) {
-                System.out.println("Ваша скидка: 10%.");
-            } else {
-                System.out.println("Скидки нет.");
-            }
-        }
+    System.out.println("У вас есть клубная карта? (да/нет):");
+    String hasClubCard = console.nextLine().trim().toLowerCase();
+
+    if (age >= 65) {
+      System.out.println("Ваша скидка: 20%.");
+    } else {
+      if (hasClubCard.equals("да")) {
+        System.out.println("Ваша скидка: 10%.");
+      } else {
+        System.out.println("Скидки нет.");
+      }
     }
+  }
 }
