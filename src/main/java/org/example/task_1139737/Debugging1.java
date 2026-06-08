@@ -1,5 +1,9 @@
 package org.example.task_1139737;
 
+/*
+Debugging a loop
+ */
+
 public class Debugging1 {
 
   public static void main(String[] args) {
