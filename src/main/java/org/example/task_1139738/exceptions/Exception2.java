@@ -1,7 +1,7 @@
 package org.example.task_1139738.exceptions;
 
 /*
-Array out of bounds
+Array out of bounds (try-catch)
  */
 
 public class Exception2 {

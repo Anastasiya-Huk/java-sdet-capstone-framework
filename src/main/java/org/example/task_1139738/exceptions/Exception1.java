@@ -1,7 +1,7 @@
 package org.example.task_1139738.exceptions;
 
 /*
-Division by zero
+Division by zero (try-catch)
  */
 
 public class Exception1 {
