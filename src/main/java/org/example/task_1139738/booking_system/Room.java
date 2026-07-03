@@ -11,4 +11,11 @@ public class Room {
   public String getRoomNumber() {
     return roomNumber;
   }
+
+  @Override
+  public String toString() {
+    return "Room{" +
+        "roomNumber='" + roomNumber + '\'' +
+        '}';
+  }
 }
