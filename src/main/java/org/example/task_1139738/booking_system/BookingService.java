@@ -1,11 +1,18 @@
 package org.example.task_1139738.booking_system;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class BookingService {
+public class BookingService implements Validatable {
 
   List<Booking> bookings = new ArrayList<>();
+
+  @Override
+  public void validate() {
+
+  }
 
   public void createBooking(User user, Room room, BookingStatus status) {
     Booking newBooking = new Booking(user, room, status);
@@ -22,5 +29,17 @@ public class BookingService {
       }
     }
     return result;
+  }
+
+  public Map<BookingStatus, List<Booking>> groupByStatus() {
+    Map<BookingStatus, List<Booking>> resultGroup = new HashMap<>();
+    for (Booking booking : bookings) {
+      BookingStatus status = booking.getStatus();
+      if (!resultGroup.containsKey(status)) {
+        resultGroup.put(status, new ArrayList<>());
+      }
+      resultGroup.get(status).add(booking);
+    }
+    return resultGroup;
   }
 }

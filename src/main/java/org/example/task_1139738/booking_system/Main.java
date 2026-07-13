@@ -1,6 +1,7 @@
 package org.example.task_1139738.booking_system;
 
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -15,10 +16,12 @@ public class Main {
 
     bookingService.createBooking(nastya, room1, BookingStatus.CREATED);
     bookingService.createBooking(vitya, room2, BookingStatus.CREATED);
-
     System.out.println("bookings = " + bookingService.bookings);
 
     List<Booking> userBookings = bookingService.findByUser(nastya);
     System.out.println(userBookings);
+
+    Map<BookingStatus, List<Booking>> statusBookings = bookingService.groupByStatus();
+    System.out.println(statusBookings);
   }
 }
