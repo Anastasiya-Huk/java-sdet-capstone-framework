@@ -34,7 +34,7 @@ public class Booking implements Validatable {
     if (user.getName() == null) {
       throw new InvalidBookingException("Name is required");
     }
-    if (user.getName().isEmpty()){
+    if (user.getName().isEmpty()) {
       throw new InvalidBookingException("Name cannot be empty");
     }
     if (user.getEmail() == null) {
