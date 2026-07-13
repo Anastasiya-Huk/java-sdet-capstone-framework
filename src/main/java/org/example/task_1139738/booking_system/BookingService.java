@@ -5,18 +5,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BookingService implements Validatable {
+public class BookingService {
 
   List<Booking> bookings = new ArrayList<>();
 
-  @Override
-  public void validate() {
-
-  }
-
   public void createBooking(User user, Room room, BookingStatus status) {
     Booking newBooking = new Booking(user, room, status);
-    bookings.add(newBooking);
+    try {
+      newBooking.validate();
+      bookings.add(newBooking);
+    } catch (InvalidBookingException e) {
+      System.out.println(e.getMessage());
+    }
   }
 
   public List<Booking> findByUser(User user) {
