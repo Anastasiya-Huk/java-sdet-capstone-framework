@@ -14,6 +14,22 @@ public class User implements Validatable {
     this.status = status;
   }
 
+  public int getId() {
+    return id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public UserStatus getStatus() {
+    return status;
+  }
+
   @Override
   public String toString() {
     return "User{" +

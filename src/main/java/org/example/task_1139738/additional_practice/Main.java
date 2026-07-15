@@ -18,7 +18,18 @@ public class Main {
 
     System.out.println(petya + "\n" + katya + "\n" + masha + "\n" + maks);
 
-    ProductService service = new ProductService();
+    List<User> users = new ArrayList<User>();
+    users.add(petya);
+    users.add(katya);
+    users.add(masha);
+    users.add(maks);
+
+    UserService userService = new UserService();
+
+    User findUser = userService.findUserByEmail(users,"katya@4jhk.com");
+    System.out.println("Found user: " + findUser);
+
+    ProductService productService = new ProductService();
 
     List<Product> products = new ArrayList<>();
     products.add(new Product("Laptop", 3000));
@@ -39,10 +50,10 @@ public class Main {
     }
     System.out.println("Most expensive product: " + mostExpensive);
 
-    double totalPrice = service.calculateTotalPrice(products);
+    double totalPrice = productService.calculateTotalPrice(products);
     System.out.println("Total amount: " + totalPrice);
 
-    List<Product> expensiveProducts = service.findExpensiveProducts(products);
+    List<Product> expensiveProducts = productService.findExpensiveProducts(products);
     System.out.println("Expensive products: " + expensiveProducts);
   }
 }
