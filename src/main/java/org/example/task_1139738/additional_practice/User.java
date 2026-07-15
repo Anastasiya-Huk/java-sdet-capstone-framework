@@ -5,11 +5,13 @@ public class User implements Validatable {
   private int id;
   private String name;
   private String email;
+  private UserStatus status;
 
-  public User(int id, String name, String email) {
+  public User(int id, String name, String email, UserStatus status) {
     this.id = id;
     this.name = name;
     this.email = email;
+    this.status = status;
   }
 
   @Override
@@ -18,31 +20,20 @@ public class User implements Validatable {
         "id=" + id +
         ", name='" + name + '\'' +
         ", email='" + email + '\'' +
+        ", status=" + status +
         '}';
   }
 
   @Override
   public void validate() {
-    if (name == null || name.isEmpty()){
+    if (name == null || name.isBlank()) {
       System.out.println("Name is required");
     }
-    if (email == null || email.isEmpty()){
+    if (email == null || email.isBlank()) {
       System.out.println("Email is required");
     }
+    if (status == null) {
+      System.out.println("Status is required");
+    }
   }
-
-  public static void main(String[] args) {
-    User petya = new User(1, "Petya", "petya@jhk.com");
-    User katya = new User(2, "Katya", "katya@4jhk.com");
-    User masha = new User(3, "Masha", "masha@4jkhk.com");
-    User maks = new User(4, "", "maks@4jkghk.com");
-
-    petya.validate();
-    katya.validate();
-    masha.validate();
-    maks.validate();
-
-    System.out.println(petya + "\n" + katya + "\n" + masha + "\n" + maks);
-  }
-
 }
