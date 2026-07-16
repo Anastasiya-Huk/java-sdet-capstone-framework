@@ -26,7 +26,7 @@ public class UserService {
     return count;
   }
 
-  public Map<UserStatus, Integer> usersByStatus(List<User> users) {
+  public Map<UserStatus, Integer> countUsersByStatus(List<User> users) {
     Map<UserStatus, Integer> result = new HashMap<>();
     for (User user : users) {
       UserStatus status = user.getStatus();
@@ -38,5 +38,17 @@ public class UserService {
       }
     }
     return result;
+  }
+
+  public Map<UserStatus, List<User>> groupUsersByStatus(List<User> users) {
+    Map<UserStatus, List<User>> resultGroupUsers = new HashMap<>();
+    for (User user : users) {
+      UserStatus status = user.getStatus();
+      if (!resultGroupUsers.containsKey(status)) {
+        resultGroupUsers.put(status, new ArrayList<>());
+      }
+      resultGroupUsers.get(status).add(user);
+    }
+    return resultGroupUsers;
   }
 }

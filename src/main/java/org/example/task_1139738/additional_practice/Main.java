@@ -34,8 +34,11 @@ public class Main {
     int countUsers = userService.countUserByStatus(users, UserStatus.ACTIVE);
     System.out.println("Number of users by status: " + countUsers);
 
-    Map<UserStatus, Integer> countByStatus = userService.usersByStatus(users);
+    Map<UserStatus, Integer> countByStatus = userService.countUsersByStatus(users);
     System.out.println(countByStatus);
+
+    Map<UserStatus, List<User>> groupByStatus = userService.groupUsersByStatus(users);
+    System.out.println(groupByStatus);
 
     ProductService productService = new ProductService();
 
