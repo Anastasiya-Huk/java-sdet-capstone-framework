@@ -1,7 +1,9 @@
 package org.example.task_1139738.additional_practice;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserService {
 
@@ -22,5 +24,19 @@ public class UserService {
       }
     }
     return count;
+  }
+
+  public Map<UserStatus, Integer> usersByStatus(List<User> users) {
+    Map<UserStatus, Integer> result = new HashMap<>();
+    for (User user : users) {
+      UserStatus status = user.getStatus();
+      if (!result.containsKey(status)) {
+        result.put(status, 1);
+      } else {
+        int currentCount = result.get(status);
+        result.put(status, currentCount + 1);
+      }
+    }
+    return result;
   }
 }
