@@ -7,10 +7,12 @@ public class Product {
 
   private String productName;
   private double price;
+  private int productId;
 
-  public Product(String productName, double price) {
+  public Product(int productId, String productName, double price) {
     this.productName = productName;
     this.price = price;
+    this.productId = productId;
   }
 
   public String getProductName() {
@@ -21,11 +23,16 @@ public class Product {
     return price;
   }
 
+  public int getProductId() {
+    return productId;
+  }
+
   @Override
   public String toString() {
     return "Product{" +
         "productName='" + productName + '\'' +
         ", price=" + price +
+        ", productId=" + productId +
         '}';
   }
 }

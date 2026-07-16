@@ -1,7 +1,9 @@
 package org.example.task_1139738.additional_practice;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -35,11 +37,11 @@ public class Main {
     ProductService productService = new ProductService();
 
     List<Product> products = new ArrayList<>();
-    products.add(new Product("Laptop", 3000));
-    products.add(new Product("Earphones", 50.50));
-    products.add(new Product("Wrist watch", 200.20));
-    products.add(new Product("Phone", 1499));
-    products.add(new Product("Keyboard", 20));
+    products.add(new Product(1, "Laptop", 3000));
+    products.add(new Product(2, "Earphones", 50.50));
+    products.add(new Product(3, "Wrist watch", 200.20));
+    products.add(new Product(4, "Phone", 1499));
+    products.add(new Product(5, "Keyboard", 20));
 
     for (Product product : products) {
       System.out.println(product);
@@ -58,5 +60,13 @@ public class Main {
 
     List<Product> expensiveProducts = productService.findExpensiveProducts(products);
     System.out.println("Expensive products: " + expensiveProducts);
+
+    Map<Integer, Product> productsMap = new HashMap<>();
+    for (Product product : products) {
+      productsMap.put(product.getProductId(), product);
+    }
+    for (Map.Entry<Integer, Product> entry : productsMap.entrySet()) {
+      System.out.println("Key: " + entry.getKey() + ", " + "Value: " + entry.getValue());
+    }
   }
 }
