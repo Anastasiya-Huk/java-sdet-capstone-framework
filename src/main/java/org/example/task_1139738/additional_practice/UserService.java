@@ -13,4 +13,17 @@ public class UserService {
     }
     return null;
   }
+
+
+  public int countUserByStatus(List<User> users, UserStatus status) {
+    int count = 0;
+    for (User user : users) {
+      {
+        if (user.getStatus() == status) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
 }

@@ -26,8 +26,11 @@ public class Main {
 
     UserService userService = new UserService();
 
-    User findUser = userService.findUserByEmail(users,"katya@4jhk.com");
+    User findUser = userService.findUserByEmail(users, "katya@4jhk.com");
     System.out.println("Found user: " + findUser);
+
+    int countUsers = userService.countUserByStatus(users, UserStatus.ACTIVE);
+    System.out.println("Number of users by status: " + countUsers);
 
     ProductService productService = new ProductService();
 
