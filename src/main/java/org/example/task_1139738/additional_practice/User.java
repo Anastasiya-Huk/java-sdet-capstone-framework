@@ -43,13 +43,13 @@ public class User implements Validatable {
   @Override
   public void validate() {
     if (name == null || name.isBlank()) {
-      System.out.println("Name is required");
+      throw new InvalidUserException("Name is required");
     }
     if (email == null || email.isBlank()) {
-      System.out.println("Email is required");
+      throw new InvalidUserException("Email is required");
     }
     if (status == null) {
-      System.out.println("Status is required");
+      throw new InvalidUserException("Status is required");
     }
   }
 }

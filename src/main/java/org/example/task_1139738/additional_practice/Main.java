@@ -10,21 +10,24 @@ public class Main {
   public static void main(String[] args) {
     User petya = new User(1, "Petya", "petya@jhk.com", UserStatus.ACTIVE);
     User katya = new User(2, "Katya", "katya@4jhk.com", UserStatus.ACTIVE);
-    User masha = new User(3, "Masha", "masha@4jkhk.com", UserStatus.BLOCKED);
+    User masha = new User(3, "Masha", "", UserStatus.BLOCKED);
     User maks = new User(4, "", "maks@4jkghk.com", UserStatus.DELETED);
-
-    petya.validate();
-    katya.validate();
-    masha.validate();
-    maks.validate();
-
-    System.out.println(petya + "\n" + katya + "\n" + masha + "\n" + maks);
 
     List<User> users = new ArrayList<User>();
     users.add(petya);
     users.add(katya);
     users.add(masha);
     users.add(maks);
+
+    for (User user : users) {
+      try {
+        user.validate();
+      } catch (InvalidUserException e) {
+        System.out.println(e.getMessage());
+      }
+    }
+
+    System.out.println(petya + "\n" + katya + "\n" + masha + "\n" + maks);
 
     UserService userService = new UserService();
 
